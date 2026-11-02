@@ -36,7 +36,7 @@ Staff use this when the clinic is underway or when reviewing the dayâ€™s sheet â
 ## How to run
 
 ```bash
-cd ~/Desktop/teeth-cleaning-slot-drawer-demo
+cd ~/teeth-cleaning-slot-drawer-demo
 npm install
 npm run dev
 ```
