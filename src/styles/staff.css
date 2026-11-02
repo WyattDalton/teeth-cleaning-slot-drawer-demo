@@ -1,0 +1,597 @@
+/* Extracted staff UI tokens + surfaces for the teeth-cleaning slot drawer demo. */
+
+:root {
+  --kahoots-cream: #f4f6f8;
+  --kahoots-cream-deep: #e8ecf0;
+  --kahoots-ink: #14171a;
+  --kahoots-green-near-black: #0d1612;
+  --kahoots-green: #2a5c3f;
+  --kahoots-red: #c52127;
+  --kahoots-red-deep: #8b161b;
+  --kahoots-border: #cfd6dc;
+  --font-display: 'Arial Narrow', 'Franklin Gothic Medium', sans-serif;
+  --staff-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --staff-duration-micro: 150ms;
+  --staff-duration-ui: 220ms;
+  --staff-duration-overlay: 280ms;
+  --staff-nested-drawer-inset: 2rem;
+}
+
+.staff-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+}
+
+.staff-surface {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid color-mix(in srgb, var(--kahoots-border) 65%, white);
+  background: color-mix(in srgb, white 78%, transparent);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 65%, transparent),
+    0 8px 24px color-mix(in srgb, var(--kahoots-ink) 5%, transparent);
+}
+
+.staff-surface::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background-image:
+    radial-gradient(
+      ellipse 70% 50% at 8% 0%,
+      color-mix(in srgb, var(--kahoots-red) 6%, transparent) 0%,
+      transparent 64%
+    ),
+    radial-gradient(
+      ellipse 50% 40% at 96% 8%,
+      color-mix(in srgb, white 35%, transparent) 0%,
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 80% 40% at 50% 100%,
+      color-mix(in srgb, var(--kahoots-green) 5%, transparent) 0%,
+      transparent 70%
+    );
+}
+
+.staff-surface::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+}
+
+.staff-surface > * {
+  position: relative;
+  z-index: 1;
+}
+
+.staff-surface--frosted {
+  background: color-mix(in srgb, white 52%, transparent);
+  border-color: color-mix(in srgb, var(--kahoots-border) 45%, transparent);
+  backdrop-filter: blur(18px) saturate(175%);
+  -webkit-backdrop-filter: blur(18px) saturate(175%);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 35%, transparent),
+    0 8px 24px color-mix(in srgb, var(--kahoots-ink) 4%, transparent);
+}
+
+.staff-surface--frosted::before,
+.staff-surface--frosted::after {
+  display: none;
+}
+
+.staff-signup-details {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: 1px solid var(--kahoots-border);
+  background-color: var(--kahoots-cream);
+}
+
+.staff-signup-details::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(
+      ellipse 70% 50% at 6% 0%,
+      color-mix(in srgb, var(--kahoots-red) 10%, transparent) 0%,
+      transparent 64%
+    ),
+    radial-gradient(
+      ellipse 50% 40% at 94% 12%,
+      color-mix(in srgb, var(--kahoots-green) 10%, transparent) 0%,
+      transparent 62%
+    ),
+    radial-gradient(var(--kahoots-border) 1px, transparent 1px);
+  background-size:
+    auto,
+    auto,
+    16px 16px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 85% 75% at 50% 0%,
+    white 28%,
+    transparent 88%
+  );
+  mask-image: radial-gradient(
+    ellipse 85% 75% at 50% 0%,
+    white 28%,
+    transparent 88%
+  );
+}
+
+.staff-signup-details::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+}
+
+.staff-signup-details > * {
+  position: relative;
+  z-index: 1;
+}
+
+.staff-glass-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--kahoots-border) 65%, white);
+  background: color-mix(in srgb, var(--kahoots-cream) 52%, transparent);
+  backdrop-filter: blur(14px) saturate(165%);
+  -webkit-backdrop-filter: blur(14px) saturate(165%);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 55%, transparent),
+    var(--staff-glass-shadow-x, 3px) var(--staff-glass-shadow-y, 5px)
+      var(--staff-glass-shadow-blur, 9px) var(--staff-glass-shadow-spread, 0px)
+      color-mix(
+        in srgb,
+        var(--kahoots-ink) var(--staff-glass-shadow-opacity, 6%),
+        transparent
+      );
+  transition:
+    background-color var(--staff-duration-micro) var(--staff-ease),
+    border-color var(--staff-duration-micro) var(--staff-ease),
+    transform var(--staff-duration-micro) var(--staff-ease);
+}
+
+.staff-glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(
+      ellipse 75% 55% at 8% 0%,
+      color-mix(in srgb, white 40%, transparent) 0%,
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 55% 45% at 92% 100%,
+      color-mix(in srgb, var(--kahoots-green) 8%, transparent) 0%,
+      transparent 62%
+    );
+}
+
+.staff-glass-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.staff-glass-card--interactive:hover {
+  background: color-mix(in srgb, var(--kahoots-cream) 66%, transparent);
+  border-color: color-mix(in srgb, var(--kahoots-border) 78%, white);
+  transform: translateY(-1px);
+}
+
+.staff-glass-card--interactive:active {
+  transform: scale(0.97);
+}
+
+.staff-table-th {
+  background-color: var(--kahoots-green-near-black);
+  color: var(--kahoots-cream);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.375rem 0.625rem;
+  text-align: left;
+  border-radius: 0;
+}
+
+.staff-drawer-root {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100%;
+  height: 100dvh;
+  z-index: 80;
+  pointer-events: none;
+}
+
+.staff-drawer-panel {
+  width: min(100%, max(800px, 50vw));
+  z-index: 90;
+  isolation: isolate;
+  pointer-events: auto;
+}
+
+.staff-drawer-scrim,
+.staff-nested-drawer-scrim {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100%;
+  height: 100dvh;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  pointer-events: auto;
+  background: color-mix(
+    in srgb,
+    var(--kahoots-green-near-black) 55%,
+    transparent
+  );
+  -webkit-backdrop-filter: blur(6px) saturate(110%);
+  backdrop-filter: blur(6px) saturate(110%);
+}
+
+.staff-drawer-scrim {
+  z-index: 80;
+}
+
+.staff-drawer-panel::before,
+.staff-nested-drawer-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(#e2e2e2 1px, transparent 1px) 0 0 / 16px 16px;
+  -webkit-mask-image: radial-gradient(circle, white 60%, transparent 100%);
+  mask-image: radial-gradient(circle, white 40%, transparent 100%);
+}
+
+.staff-drawer-panel > *,
+.staff-nested-drawer-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.staff-drawer-panel--wide {
+  width: min(100%, max(960px, 72vw));
+}
+
+.staff-nested-drawer-root {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100%;
+  height: 100dvh;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.staff-nested-drawer-panel {
+  width: calc(min(100%, max(800px, 50vw)) - var(--staff-nested-drawer-inset));
+  z-index: 110;
+  isolation: isolate;
+  pointer-events: auto;
+}
+
+.staff-nested-drawer-panel.staff-drawer-panel--wide {
+  width: calc(min(100%, max(960px, 72vw)) - var(--staff-nested-drawer-inset));
+}
+
+.staff-nested-drawer-scrim {
+  z-index: 105;
+}
+
+.staff-nested-drawer-peek {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 108;
+  width: var(--staff-nested-drawer-inset);
+  right: calc(min(100%, max(800px, 50vw)) - var(--staff-nested-drawer-inset));
+  background: transparent;
+  pointer-events: auto;
+}
+
+.staff-nested-drawer-root:has(.staff-drawer-panel--wide) .staff-nested-drawer-peek {
+  width: var(--staff-nested-drawer-inset);
+  right: calc(min(100%, max(960px, 72vw)) - var(--staff-nested-drawer-inset));
+}
+
+.staff-drawer-header-actions {
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.staff-drawer-header-actions .staff-pill,
+.staff-drawer-header-actions .staff-btn {
+  box-sizing: border-box;
+  display: inline-flex;
+  height: 2.25rem;
+  min-height: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.staff-drawer-header-actions .staff-btn--icon {
+  width: 2.25rem;
+  min-width: 2.25rem;
+}
+
+.staff-drawer-header-actions .staff-btn span {
+  font-size: inherit;
+}
+
+.staff-pill {
+  position: relative;
+  isolation: isolate;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in srgb, var(--kahoots-border) 80%, white);
+  background: color-mix(in srgb, white 96%, var(--kahoots-cream));
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 70%, transparent),
+    0 2px 8px color-mix(in srgb, var(--kahoots-ink) 6%, transparent);
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--kahoots-ink);
+  transition:
+    background-color var(--staff-duration-ui) var(--staff-ease),
+    border-color var(--staff-duration-ui) var(--staff-ease),
+    color var(--staff-duration-ui) var(--staff-ease),
+    box-shadow var(--staff-duration-ui) var(--staff-ease);
+}
+
+.staff-pill--selected {
+  border-color: color-mix(
+    in srgb,
+    var(--kahoots-green-near-black) 88%,
+    transparent
+  );
+  background: color-mix(
+    in srgb,
+    var(--kahoots-green-near-black) 94%,
+    transparent
+  );
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 14%, transparent),
+    0 8px 20px
+      color-mix(in srgb, var(--kahoots-green-near-black) 24%, transparent);
+  color: var(--kahoots-cream);
+}
+
+.staff-pill--selected-green {
+  background: color-mix(
+    in srgb,
+    var(--kahoots-green) 14%,
+    var(--kahoots-cream)
+  );
+  border-color: color-mix(
+    in srgb,
+    var(--kahoots-green) 35%,
+    var(--kahoots-border)
+  );
+  color: var(--kahoots-green);
+}
+
+.staff-btn {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid color-mix(in srgb, white 16%, transparent);
+  border-bottom-width: 1px;
+  border-radius: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  background: color-mix(
+    in srgb,
+    var(--kahoots-green-near-black) 74%,
+    transparent
+  );
+  backdrop-filter: blur(16px) saturate(145%);
+  -webkit-backdrop-filter: blur(16px) saturate(145%);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 14%, transparent),
+    0 8px 20px
+      color-mix(in srgb, var(--kahoots-green-near-black) 24%, transparent);
+  color: var(--kahoots-cream);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition:
+    background-color var(--staff-duration-ui) var(--staff-ease),
+    border-color var(--staff-duration-ui) var(--staff-ease),
+    transform var(--staff-duration-micro) var(--staff-ease);
+}
+
+.staff-btn::before {
+  display: none;
+}
+
+.staff-btn:hover:not(:disabled):not(.staff-btn--secondary):not(
+    .staff-btn--ghost
+  ):not(.staff-btn--destructive):not(.staff-btn--glass):not(.staff-btn--icon) {
+  background: color-mix(
+    in srgb,
+    var(--kahoots-green-near-black) 84%,
+    transparent
+  );
+  border-color: color-mix(in srgb, white 24%, transparent);
+  transform: translateY(-1px);
+}
+
+.staff-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.staff-btn:disabled:not(.staff-btn--secondary):not(.staff-btn--ghost):not(
+    .staff-btn--destructive
+  ):not(.staff-btn--glass):not(.staff-btn--icon) {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.staff-btn span {
+  position: relative;
+  z-index: 10;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.staff-btn svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.staff-btn--icon {
+  box-sizing: border-box;
+  width: 2.25rem;
+  height: 2.25rem;
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  padding: 0;
+}
+
+.staff-btn--compact {
+  padding: 0.2rem 0.75rem;
+  min-height: 1.75rem;
+  font-size: 0.75rem;
+}
+
+.staff-btn--secondary,
+.staff-btn--ghost,
+.staff-btn--destructive,
+.staff-btn--glass {
+  background: transparent;
+  color: var(--kahoots-ink);
+  border: 1px solid var(--kahoots-green-near-black);
+  border-bottom-width: 1px;
+  font-family: inherit;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+.staff-btn--glass {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-color: color-mix(in srgb, var(--kahoots-border) 65%, white);
+  background: color-mix(in srgb, white 72%, transparent);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, white 60%, transparent);
+}
+
+.staff-btn--glass:hover:not(:disabled) {
+  background: color-mix(in srgb, white 88%, transparent);
+  border-color: color-mix(in srgb, var(--kahoots-border) 78%, white);
+}
+
+.staff-btn.staff-btn--icon {
+  isolation: isolate;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in srgb, var(--kahoots-border) 65%, white);
+  border-bottom-width: 1px;
+  background: color-mix(in srgb, white 72%, transparent);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, white 55%, transparent);
+  color: var(--kahoots-ink);
+  font-family: inherit;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+.staff-btn.staff-btn--icon:hover:not(:disabled) {
+  background: color-mix(in srgb, white 88%, transparent);
+  border-color: color-mix(in srgb, var(--kahoots-border) 78%, white);
+}
+
+.staff-btn.staff-btn--icon:focus-visible {
+  outline: 2px solid var(--kahoots-green-near-black);
+  outline-offset: 2px;
+}
+
+.staff-btn.staff-btn--icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.staff-btn--secondary::before,
+.staff-btn--secondary::after,
+.staff-btn--ghost::before,
+.staff-btn--ghost::after,
+.staff-btn--destructive::before,
+.staff-btn--destructive::after,
+.staff-btn--glass::before,
+.staff-btn--glass::after {
+  display: none;
+}
+
+.staff-btn--destructive {
+  border-color: var(--kahoots-red-deep);
+  color: var(--kahoots-red-deep);
+}
+
+.staff-btn__spinner {
+  animation: staff-btn-spin 0.85s linear infinite;
+}
+
+@keyframes staff-btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .staff-btn__spinner {
+    animation: none;
+  }
+}

@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--kahoots-ink);
+  background:
+    radial-gradient(ellipse 80% 55% at 12% 0%, color-mix(in srgb, var(--kahoots-red) 8%, transparent), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 90% 10%, color-mix(in srgb, var(--kahoots-green) 10%, transparent), transparent 55%),
+    linear-gradient(160deg, #eef2f5 0%, var(--kahoots-cream) 45%, #e4e9ee 100%);
+  font-family:
+    'Segoe UI',
+    'Helvetica Neue',
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+.demo-stage {
+  position: relative;
+  isolation: isolate;
+}
